@@ -1,0 +1,132 @@
+.about-section {
+  display: grid;
+  width: min(1120px, 86vw);
+  min-height: 80vh;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+  margin: 0 auto;
+  padding: 5rem 0 8rem;
+  scroll-margin-top: 2rem;
+}
+
+.about-photo-wrap {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 390px;
+  justify-self: center;
+  padding: 0.8rem;
+  border: 1px solid var(--line-color);
+  border-radius: 1.5rem;
+  background: var(--surface-color);
+}
+
+.about-photo-wrap::before {
+  position: absolute;
+  z-index: -1;
+  inset: 1.25rem -1.25rem -1.25rem 1.25rem;
+  border: 1px solid rgb(212 175 55 / 38%);
+  border-radius: inherit;
+  content: '';
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-photo-caption {
+  display: block;
+  padding: 0.9rem 0.35rem 0.25rem;
+  color: var(--muted-color);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.about-copy {
+  max-width: 650px;
+}
+
+.about-eyebrow {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.about-copy h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+}
+
+.about-copy h2 span {
+  color: var(--accent-color);
+}
+
+.about-intro,
+.about-detail {
+  color: var(--muted-color);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+}
+
+.about-intro {
+  color: var(--text-color);
+}
+
+.about-detail {
+  margin-top: 1rem;
+}
+
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.about-link span {
+  color: var(--accent-color);
+  transition: transform 180ms ease;
+}
+
+.about-link:hover {
+  color: var(--accent-color);
+}
+
+.about-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 0 6rem;
+  }
+
+  .about-photo-wrap {
+    width: min(78%, 340px);
+    justify-self: start;
+    margin-left: 0.5rem;
+  }
+}

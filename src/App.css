@@ -34,7 +34,7 @@ body {
   display: none;
 }
 
-nav {
+.site-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,16 +46,17 @@ nav {
   background: transparent;
   backdrop-filter: blur(15px);
   --webkit--backdrop-filter: blur(15px);
+  z-index: 1000;
 }
 
-nav h1 {
+.site-nav h1 {
   color: white;
   font-size: clamp(2rem, 2.4rem, 3rem);
   font-weight: bold;
   font-style: oblique;
 }
 
-nav ul {
+.site-nav ul {
   display: flex;
   list-style: none;
   gap: 3rem;
@@ -63,13 +64,13 @@ nav ul {
   position: relative;
 }
 
-ul a {
+.site-nav ul a {
   text-decoration: none;
   color: var(--text-color);
   position: relative;
 }
 
-ul a::before {
+.site-nav ul a::before {
   content: "";
   position: absolute;
   background: var(--accent-color);
@@ -79,8 +80,12 @@ ul a::before {
   bottom: -5px;
 }
 
-ul a:hover::before {
+.site-nav ul a:hover::before {
   width: 100%;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 section#home {
@@ -194,6 +199,56 @@ section#home {
 }
 
 @media (max-width: 760px) {
+  .site-nav {
+    padding: 12px 6vw;
+  }
+
+  .nav-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  .site-nav ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 6vw;
+    left: 6vw;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--line-color);
+    border-radius: 10px;
+    background: var(--bg-color);
+    font-size: 1.1rem;
+  }
+
+  .site-nav ul.is-open {
+    display: flex;
+  }
+
+  .site-nav ul a {
+    display: block;
+    padding: 12px 0;
+  }
+
   section#home {
     padding-right: 6vw;
     padding-left: 6vw;

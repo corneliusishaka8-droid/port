@@ -18,7 +18,7 @@ export default function About() {
         <p className="about-eyebrow">A little about me</p>
         <h2 id="about-title">Curious by nature.<br /><span>Developer by choice.</span></h2>
         <p className="about-intro">
-          I’m Ishaka Cornelius Soghenekparobor, an aspiring software engineer looking for an
+          I’m Ishaka Cornelius oghenekparobor, an aspiring software engineer looking for an
           internship where I can learn from a team, contribute to real projects, and grow as a
           developer.
         </p>

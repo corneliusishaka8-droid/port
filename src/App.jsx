@@ -6,6 +6,8 @@ import Header from './components/header.jsx'
 import Hero from './components/hero.jsx'
 import Skills from './components/skills.jsx'
 import About from './components/about.jsx'
+import Projects from './components/projects.jsx'
+import Contact from './components/contact.jsx'
 import './App.css'
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
@@ -33,12 +35,7 @@ function App() {
 
       const heroTitle = splitWords(document.querySelector('.hero_div h2'))
       const heroRole = splitWords(document.querySelector('.hero_div p'))
-      const heroTimeline = gsap.timeline({
-        scrollTrigger: {
-          ...replayOnEntry('#home', 'top top'),
-          end: 'bottom top',
-        },
-      })
+      const heroTimeline = gsap.timeline()
       heroTimeline
         .from('nav', { y: -24, autoAlpha: 0, duration: 0.7, ease: 'power3.out' })
         .from(heroTitle, {
@@ -146,6 +143,78 @@ function App() {
           ease: 'power2.out',
         }, '-=0.2')
 
+      const projectsEyebrow = splitWords(document.querySelector('.projects-eyebrow'))
+      const projectsTitle = splitWords(document.querySelector('#projects-title'))
+      const projectsIntro = splitWords(document.querySelector('.projects-intro'))
+      const projectsTimeline = gsap.timeline({
+        scrollTrigger: replayOnEntry('.projects-section', 'top 78%'),
+      })
+      projectsTimeline
+        .from(projectsEyebrow, {
+          yPercent: 70,
+          autoAlpha: 0,
+          duration: 0.55,
+          stagger: 0.035,
+          ease: 'power3.out',
+        })
+        .from(projectsTitle, {
+          yPercent: 80,
+          autoAlpha: 0,
+          duration: 0.65,
+          stagger: 0.045,
+          ease: 'power3.out',
+        }, '-=0.25')
+        .from(projectsIntro, {
+          y: 14,
+          autoAlpha: 0,
+          duration: 0.5,
+          stagger: 0.015,
+          ease: 'power2.out',
+        }, '-=0.2')
+        .from('.project-card', {
+          y: 30,
+          autoAlpha: 0,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: 'power3.out',
+        }, '-=0.1')
+
+      const contactEyebrow = splitWords(document.querySelector('.contact-eyebrow'))
+      const contactTitle = splitWords(document.querySelector('#contact-title'))
+      const contactIntro = splitWords(document.querySelector('.contact-intro'))
+      const contactTimeline = gsap.timeline({
+        scrollTrigger: replayOnEntry('.contact-section', 'top 82%'),
+      })
+      contactTimeline
+        .from(contactEyebrow, {
+          yPercent: 70,
+          autoAlpha: 0,
+          duration: 0.5,
+          stagger: 0.035,
+          ease: 'power3.out',
+        })
+        .from(contactTitle, {
+          yPercent: 80,
+          autoAlpha: 0,
+          duration: 0.65,
+          stagger: 0.045,
+          ease: 'power3.out',
+        }, '-=0.25')
+        .from(contactIntro, {
+          y: 14,
+          autoAlpha: 0,
+          duration: 0.5,
+          stagger: 0.015,
+          ease: 'power2.out',
+        }, '-=0.2')
+        .from('.contact-link', {
+          x: 22,
+          autoAlpha: 0,
+          duration: 0.55,
+          stagger: 0.08,
+          ease: 'power3.out',
+        }, '-=0.1')
+
     }, pageRef)
 
     const heroImage = pageRef.current?.querySelector('.mypic')
@@ -168,6 +237,8 @@ function App() {
       <Hero />
       <Skills />
       <About />
+      <Projects />
+      <Contact />
     </div>
   )
 }

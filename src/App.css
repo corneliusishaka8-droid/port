@@ -42,6 +42,7 @@ nav {
   background: transparent;
   backdrop-filter: blur(15px);
   --webkit--backdrop-filter: blur(15px);
+  z-index: 1000;
 }
 
 nav h1 {
@@ -77,6 +78,10 @@ ul a::before {
 
 ul a:hover::before {
   width: 100%;
+}
+
+nav .nav-toggle {
+  display: none;
 }
 
 section#home {
@@ -186,5 +191,113 @@ section#home {
     width: min(70%, 270px);
     max-height: 36vh;
     margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 760px) {
+  nav {
+    z-index: 20;
+    padding: 14px 6vw;
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  nav h1 {
+    font-size: 2rem;
+  }
+
+  nav .nav-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid rgb(255 255 255 / 20%);
+    border-radius: 50%;
+    color: var(--text-color);
+    background: rgb(255 255 255 / 5%);
+    cursor: pointer;
+  }
+
+  nav .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  nav.nav-open {
+    background: rgb(23 23 22 / 92%);
+  }
+
+  nav.nav-open .nav-toggle span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  nav.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  nav.nav-open .nav-toggle span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  nav .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.25rem 1rem;
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-top: 0;
+    border-radius: 0 0 1rem 1rem;
+    background: rgb(23 23 22 / 94%);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    font-size: 1rem;
+  }
+
+  nav.nav-open .nav-links {
+    display: flex;
+  }
+
+  nav .nav-links li {
+    width: 100%;
+  }
+
+  nav .nav-links a {
+    display: block;
+    padding: 0.9rem 0.25rem;
+    font-size: 1rem;
+  }
+
+  section#home {
+    padding-right: 6vw;
+    padding-left: 6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 12px 5vw;
+  }
+
+  nav h1 {
+    font-size: 1.8rem;
+  }
+
+  section#home {
+    padding-right: 7vw;
+    padding-left: 7vw;
+  }
+
+  .hero_div h2 {
+    font-size: clamp(2.55rem, 12vw, 3.6rem);
   }
 }

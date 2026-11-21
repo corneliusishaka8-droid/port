@@ -1,16 +1,38 @@
-# React + Vite
+# Ishaka Cornelius — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio for Ishaka Cornelius Soghenekparobor, an aspiring software engineer seeking an internship. The site introduces me, presents my skills, and showcases four project concepts.
 
-Currently, two official plugins are available:
+## Portfolio sections
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home:** introduction and portrait.
+- **About:** background, interests, and internship goals.
+- **Skills:** a horizontally scrollable skills carousel.
+- **Projects:** real estate, barber salon, movie discovery, and creative studio projects.
+- **Contact:** WhatsApp, Instagram, LinkedIn, and GitHub links.
 
-## React Compiler
+## Built with
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React and Vite
+- JavaScript, HTML, and CSS
+- GSAP, SplitText, and ScrollTrigger
 
-## Expanding the ESLint configuration
+The hero introduction animates as soon as the page loads. The Skills, About, Projects, and Contact sections animate as they enter the viewport, and replay when they re-enter.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+```sh
+npm install
+npm run dev
+```
+
+To create a production build:
+
+```sh
+npm run build
+```
+
+## Update project and contact details
+
+Edit the `projects` array in `src/components/projects.jsx` to change project names, descriptions, images, technologies, and live project URLs. The real estate, barber salon, and movie site cards link to their deployed projects. The project photos are remote Unsplash images; replace them with screenshots of your own work when ready.
+
+Replace the sample destinations in `contactLinks` in `src/components/contact.jsx` with your WhatsApp number and social profile URLs.

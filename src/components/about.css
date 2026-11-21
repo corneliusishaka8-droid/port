@@ -164,3 +164,18 @@
     font-size: clamp(2.35rem, 10vw, 3.2rem);
   }
 }
+
+@media (max-width: 360px) {
+  .about-photo-wrap {
+    width: 84%;
+  }
+
+  .about-copy h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-intro,
+  .about-detail {
+    font-size: 0.96rem;
+  }
+}

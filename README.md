@@ -16,7 +16,7 @@ A personal portfolio for Ishaka Cornelius Soghenekparobor, an aspiring software 
 - JavaScript, HTML, and CSS
 - GSAP, SplitText, and ScrollTrigger
 
-The hero introduction animates as soon as the page loads. The Skills, About, Projects, and Contact sections animate as they enter the viewport, and replay when they re-enter.
+The layout adapts to mobile, tablet, and desktop screens, with a hamburger menu on small screens. The hero introduction animates as soon as the page loads. The Skills, About, Projects, and Contact sections animate as they enter the viewport, and replay when they re-enter.
 
 ## Run locally
 

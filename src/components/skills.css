@@ -174,3 +174,18 @@
     height: 36px;
   }
 }
+
+@media (max-width: 360px) {
+  .skills-heading h2 {
+    font-size: 2rem;
+  }
+
+  .skills-controls button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skills-track {
+    grid-auto-columns: 62vw;
+  }
+}

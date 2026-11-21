@@ -81,6 +81,7 @@
 
 .contact-link-copy {
   display: grid;
+  min-width: 0;
   flex: 1;
   gap: 0.3rem;
 }
@@ -131,5 +132,23 @@
 
   .contact-link-copy small {
     font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-copy h2 {
+    font-size: 2.3rem;
+  }
+
+  .contact-link {
+    gap: 0.6rem;
+  }
+
+  .contact-link-copy strong {
+    font-size: 0.9rem;
+  }
+
+  .contact-arrow {
+    font-size: 1rem;
   }
 }
